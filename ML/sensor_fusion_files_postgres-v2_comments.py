@@ -109,13 +109,9 @@ x = pd.CategoricalIndex(d1_train['marker'])
 #-----------------------------------init classifier,train model,predict for test data,check prob for test----------------------
 
 clf = RandomForestClassifier(n_jobs=1000)
-
 clf.fit(d1_train[features], y)
-
 test_data = clf.predict(d1_test[features])
-
 proba = clf.predict_proba(d1_test[features])
-
 preds = clf.predict(d1_test[features])
 
 #----------------------------------combining prediction as column with test data , confusion matrix--------------------------------------
