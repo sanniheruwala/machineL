@@ -1,0 +1,7 @@
+first_name,last_name,city,country,state,zip_code
+A,C,Bangalore,India,Karnataka,638901
+B,D,-,India,NULL,
+C,E,?,India,?,639001
+D,F,NA,India,-,639051
+E,G,Kolkata,India,West Bengal,639101
+F,H,Chennai,India,Tamil Nadu,639151

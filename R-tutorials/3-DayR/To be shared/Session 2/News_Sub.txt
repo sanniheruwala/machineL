@@ -1,0 +1,35 @@
+Name	Gender	Age	New_Paper_Sub	Sub_St_Date	Sub_En_Date
+A	Male	34	The Hindu	1/1/2015	1/1/2016
+B	Female	35	The Indian Express	2/1/2015	2/1/2016
+C	Male	26	The Times of India	3/4/2015	3/3/2016
+D	Female	28	Deccan Chronicle	4/4/2015	4/3/2016
+E	Male	33	Business Standard	5/5/2015	5/4/2016
+F	Female	27	The Hindu	6/5/2015	6/4/2016
+G	Male	27	The Indian Express	7/6/2015	7/5/2016
+H	Female	30	The Times of India	8/6/2015	8/5/2016
+I	Male	25	Deccan Chronicle	9/6/2015	9/5/2016
+J	Female	35	Business Standard	10/7/2015	10/6/2016
+K	Male	34	The Hindu	11/7/2015	11/6/2016
+L	Female	25	The Indian Express	12/8/2015	12/7/2016
+M	Male	26	The Times of India	1/8/2016	1/7/2017
+N	Female	30	Deccan Chronicle	2/8/2016	2/7/2017
+O	Male	29	Business Standard	3/10/2016	3/10/2017
+P	Female	29	The Hindu	4/10/2016	4/10/2017
+Q	Male	26	The Indian Express	5/11/2016	5/11/2017
+R	Female	28	The Times of India	6/11/2016	6/11/2017
+S	Male	31	Deccan Chronicle	7/12/2016	7/12/2017
+T	Female	27	Business Standard	8/12/2016	8/12/2017
+U	Male	25	The Hindu	9/12/2016	9/12/2017
+V	Female	31	The Indian Express	10/13/2016	10/13/2017
+W	Male	29	The Times of India	11/13/2016	11/13/2017
+Z	Female	31	Deccan Chronicle	12/14/2016	12/14/2017
+Y	Male	31	Business Standard	1/14/2017	1/14/2018
+AA	Female	29	The Hindu	2/14/2017	2/14/2018
+AB	Male	35	The Indian Express	3/17/2017	3/17/2018
+AC	Female	25	The Times of India	4/17/2017	4/17/2018
+AD	Male	33	Deccan Chronicle	5/18/2017	5/18/2018
+AE	Female	34	Business Standard	6/18/2017	6/18/2018
+AF	Male	28	The Hindu	7/19/2017	7/19/2018
+AG	Female	28	The Indian Express	8/19/2017	8/19/2018
+AH	Male	28	The Times of India	9/19/2017	9/19/2018
+AI	Female	31	Deccan Chronicle	10/20/2017	10/20/2018
