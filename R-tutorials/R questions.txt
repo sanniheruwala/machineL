@@ -1,0 +1,172 @@
+
+Why would there be an error if following command is used:
+
+1).data%>%filter(column1==”abc”,column2>25)%>%mean(), assume that “data” is a dataframe and column1 and column2 are the two columns in the dataframe, with column1 being a column containing string/character data and column2 being a column containing numeric data. Also assume that both the logical conditions are valid in the context of the data. (Assume that “dplyr” is loaded and installed in the system)
+
+a). mean() doesn’t work with character vectors  
+
+b).The logical conditions inside filter() are not valid.  
+
+c).mean() can’t be used with dplyr functions  
+
+d).mean() will work only with a numeric vector but a dataframe is being piped to it.  
+
+
+
+
+2).Use the lakers data set in the package lubridate. How many matches were played by Pau Gasol against POR on Sundays?
+
+a).30
+
+b).20
+
+c).25
+
+d).65
+
+
+
+
+
+3).Use the lakers data set in the package lubridate. How many matches were played when opponent to POR was LAL?
+
+a).300  
+
+b).852  
+
+c).500  
+
+d).400  
+
+
+
+4). Use the inbuilt mtcars data set, what is the average “mpg” for each category of car defined based on “number of gears”.
+
+a).Gear 3 -> 15.10667, Gear 4 -> 14.53333, Gear 5->11.38000  
+
+b).Gear 3 -> 16.10667, Gear 4 -> 24.53333, Gear 5->21.38000  
+
+c).Gear 4 -> 16.10667, Gear 2-> 24.53333, Gear 5->21.38000  
+
+d).Gear 3 -> 26.10667, Gear 4 -> 54.53333, Gear 5->31.38000 
+
+
+
+5).Use the lakers data set in the package lubridate. How many matches were played by Pau Gasol against POR?
+
+a).89  
+
+b).85  
+
+c).90  
+
+d).94 
+
+
+
+6).Load the inbuilt dataset AdultUCI from arules package. How many females are there in the data set whose age is less than 50 and who are black?
+
+a).4031  
+
+ b).510  
+
+c). 3031  
+
+d).1870 
+
+
+
+7).Use the inbult iris dataset, what is mean Sepal.Length for species setosa?
+
+ a).5.006  
+
+ b).7.002  
+
+c). 4.678  
+
+d). 6.000 
+
+
+
+8).Use the lakers data set in the package lubridate. How many matches were played on Home ground when the opponent was PHX on Wednesday?
+
+ a).450  
+
+ b).461  
+
+ c).441  
+
+ d).440 
+
+
+
+9). Use the lakers data set in the package lubridate. How many matches were played in the months of October, December, January and April.
+
+ a).October= 400, December= 1200, January=300, April = 456  
+
+ b).October= 871, December= 6240, January=6515, April = 3718  
+
+ c).October= 971, December= 6240, January=6515, April = 3618  
+
+ d).October= 871, December= 6240, January=6515, April = 3618 
+
+
+10).Using the data set AdultUCI from the package arules() find out the mean age corresponding to all categories in the column “income” for all white females who work less than 25 hours a week. 
+(Consider the missing values in the column “income” also as a separate group)
+
+ a).large-> 34.42763, small->45.38462, NA->34.53442  
+
+ b).small-> 34.42763, large->45.38462, NA->34.53442  
+
+ c).small-> 30.42763, large->41.38462, NA->35.53442  
+
+ d).small-> 44.42763, large->55.38462, NA->64.53442 
+
+
+Answers:
+1 – a
+2 – c
+3 – b
+4 – b
+5 – d
+6 – d
+7 – a
+8 – c
+9 – d
+10 – b
+
+Solutions:-
+
+1> iris%>%filter(iris$Species=="setosa",iris$Sepal.Length>5)%>%mean()
+
+2> lakers%>%filter(lakers$player == "Pau Gasol" & lakers$opponent == "POR" & format(ymd(lakers$date),format="%u") == "7")%>%count()
+
+3> lakers%>%filter(lakers$team == "LAL" & lakers$opponent == "POR" )%>%count()
+
+4> mtcars%>%group_by(gear)%>%summarize(mean(mpg))
+   
+5> lakers%>%filter(lakers$player == "Pau Gasol" & lakers$opponent == "POR")%>%count() 
+
+6> library(arules)
+   AdultUCI%>%filter(sex == "Female" & age<50 & race == "Black")%>%count()
+   
+7> gr_species = group_by(iris,Species)
+   gr_species%>%summarise(mean(Sepal.Length))
+   
+8> lakers%>%filter(lakers$game_type == "home" & lakers$opponent == "PHX" & format(ymd(lakers$date),format="%u") == "3")%>%count()
+
+9> laker_mutate = mutate(lakers,month = format(ymd(lakers$date),format="%B"),count = 1)
+   laker_mutate%>%group_by(month)%>%summarise(sum(count))
+
+10> library(arules) 
+    AdultUCI%>%filter(sex == "Female" & race == "White" & `hours-per-week` < 25)%>%group_by(income)%>%summarise(mean(age))
+
+
+
+
+
+
+
+
+
+
