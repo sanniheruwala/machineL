@@ -5,7 +5,6 @@ import pandas as pd
 import time
 import boto
 from boto.s3.key import Key
-import pandas as pd
 from sqlalchemy import create_engine
 from pymongo import MongoClient
 import psycopg2, csv
