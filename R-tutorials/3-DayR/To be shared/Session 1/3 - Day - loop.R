@@ -1,6 +1,6 @@
 #Setting work directory
-#library(mice)
-#library(lubridate)
+library(mice)
+library(lubridate)
 #-------------------------------------
 #mice uses pmm and logrig to fill the missing values
 #PMM use linear regression
@@ -9,7 +9,8 @@
 setwd("C:\\Users\\SHeruwala\\Machine Learning\\R-tutorials\\3-DayR\\To be shared\\Session 1")
 
 #---------------------------------------------------------------------------------------------------------------------------------
-#Introducing apply() - loop function - margin 1 to apply loop row wise - margin 2 to apply loop column wise - apply(data,margin,function(data))
+#Introducing apply() - 
+#loop function - margin 1 to apply loop row wise - margin 2 to apply loop column wise - apply(data,margin,function(data))
 #----------------------------------------------------------------------------------------------------------------------------------
 
 #Creating a dummy dataset for analysis
@@ -198,6 +199,33 @@ rm(list=ls())
 library(datasets)
 
 data()
+
+#-----------------------------------------------------------------------------------------------------------------------
+1> iris%>%filter(iris$Species=="setosa",iris$Sepal.Length>5)%>%mean()
+
+2> lakers%>%filter(lakers$player == "Pau Gasol" & lakers$opponent == "POR" & format(ymd(lakers$date),format="%u") == "7")%>%count()
+
+3> lakers%>%filter(lakers$team == "LAL" & lakers$opponent == "POR" )%>%count()
+
+4> mtcars%>%group_by(gear)%>%summarize(mean(mpg))
+   
+5> lakers%>%filter(lakers$player == "Pau Gasol" & lakers$opponent == "POR")%>%count() 
+
+6> library(arules)
+   AdultUCI%>%filter(sex == "Female" & age<50 & race == "Black")%>%count()
+   
+7> gr_species = group_by(iris,Species)
+   gr_species%>%summarise(mean(Sepal.Length))
+   
+8> lakers%>%filter(lakers$game_type == "home" & lakers$opponent == "PHX" & format(ymd(lakers$date),format="%u") == "3")%>%count()
+
+9> laker_mutate = mutate(lakers,month = format(ymd(lakers$date),format="%B"),count = 1)
+   laker_mutate%>%group_by(month)%>%summarise(sum(count))
+
+10> library(arules) 
+    AdultUCI%>%filter(sex == "Female" & race == "White" & `hours-per-week` < 25)%>%group_by(income)%>%summarise(mean(age))
+#
+#-----------------------------------------------------------------------------------------------------------------------
 
 airquality
 

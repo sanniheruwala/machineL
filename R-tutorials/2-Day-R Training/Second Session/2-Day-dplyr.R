@@ -255,5 +255,5 @@ iris%>%filter(Petal.Length>=1.4)%>%summarize(mean(Sepal.Length))
 #anova and ancova for analysis of variance and co-variance
 
 
-
+  
 

@@ -200,7 +200,7 @@ B[1,]
 B[,1]
 
 #To extract the element in first row and second column , in second row and second column
-B[c(1,2,3),2]
+B[c(1,2),2]
 
 #To extract the element in first row and first column , in first row and second column
 B[1,c(1,2)]

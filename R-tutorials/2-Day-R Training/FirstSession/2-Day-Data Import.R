@@ -143,6 +143,8 @@ customers_new=read.table("customers.csv",
 
 class(customers_new)
 
+str(customers_new)
+
 #What happens when we give a long declaration
 vartypes=c(first_name="numeric",lastname="character",city="character",country="character",
            state="character",zip="numeric")
@@ -178,6 +180,8 @@ customers=read.delim("customers.txt",
 
 customers
 
+str(customers)
+
 #--------------------------------------------------------------------------------------
 #using read.csv2 function - Specially developed for comma seperated files
 #read.delim function also saves data in data.frame structure
@@ -212,7 +216,8 @@ customers
 
 #------------------------------------------------------------------------------------
 #Dealing with missing vlaues
-#Note : numerical cell if cell is empty then it will by default assign NA but for categorial values we have to define something for empty like -/null/nil/?
+#Note : in numerical cell if cell is empty then it will by default assign NA, 
+#but for categorial values we have to define something for empty like -/null/nil/?
 #------------------------------------------------------------------------------------
 
 missing=read.csv("missing.csv",
@@ -282,6 +287,8 @@ write.csv(customers,"customers_Exported.csv",row.names=F)
 
 # To use fread function, first we have to install a package called data.table
 #use any other big data file
+
+install.packages("data.table")
 
 library(data.table)
 library(stats)
